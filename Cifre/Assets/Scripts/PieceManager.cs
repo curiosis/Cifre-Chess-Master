@@ -12,16 +12,16 @@ public class PieceManager : MonoBehaviour {
 	private string[] pieceOrder = new string[16]
 	{
 		"S", "P", "A", "P", "P", "A", "P", "S",
-		"R", "K", "B", "C", "Q", "B", "K", "R"
+		"R", "N", "B", "C", "Q", "B", "N", "R"
 	};
 
 	private Dictionary<string, Type> pieceLibrary = new Dictionary<string, Type>()
 	{
 		{"P", typeof(Pawn)},
 		{"R", typeof(Rook)},
-		{"K", typeof(Knight)},
+		{"N", typeof(Knight)},
 		{"B", typeof(Bishop)},
-		{"C", typeof(Curser)},
+		{"C", typeof(Cursed)},
 		{"Q", typeof(Queen)},
 		{"A", typeof(Archer)},
 		{"S", typeof(Scout)}

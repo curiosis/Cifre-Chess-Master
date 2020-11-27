@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Curser : Base
+public class Cursed : Base
 {
     public override void Setup(Color teamColor, Color32 spriteColor, PieceManager NewPieceManager)
     {
