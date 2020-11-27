@@ -11,9 +11,33 @@ public class Pawn : Base
         movement = new Vector3Int(0, 1, 0);
     }
 
+    private void CreatePath()
+    {
+        int x = currentCell.boardPosition.x;
+        int y = currentCell.boardPosition.y;
+
+        Matching(x, y + 1);
+        Matching(x, y - 1);
+    }
+
+    private void Matching(int x, int y)
+    {
+        CellState cellState = CellState.None;
+        cellState = currentCell.board.Validation(x, y, this);
+        if (cellState != CellState.Friendly && cellState != CellState.OutOfBounds)
+            cells.Add(currentCell.board.allCells[x, y]);
+    }
+
     public override void Kill()
     {
         base.Kill();
         GameManager.Score(val);
+    }
+
+    public override void Move()
+    {
+        currentCell = targetCell;
+        base.Move();
+
     }
 }
