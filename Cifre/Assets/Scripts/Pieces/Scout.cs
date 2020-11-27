@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Scout : Base {
 
@@ -9,6 +10,7 @@ public class Scout : Base {
         base.Setup(teamColor, spriteColor, NewPieceManager);
         val = 2;
         movement = new Vector3Int(0, 0, 1);
+        GetComponent<Image>().sprite = Resources.Load<Sprite>("Scout");
     }
 
     public override void Kill()

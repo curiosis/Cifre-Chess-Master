@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Queen : Base
 {
@@ -9,6 +10,7 @@ public class Queen : Base
         base.Setup(teamColor, spriteColor, NewPieceManager);
         val = 9;
         movement = new Vector3Int(7, 7, 7);
+        GetComponent<Image>().sprite = Resources.Load<Sprite>("Queen");
     }
 
     public override void Kill()

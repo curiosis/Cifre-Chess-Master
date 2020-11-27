@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cursed : Base
 {
@@ -8,6 +9,7 @@ public class Cursed : Base
     {
         base.Setup(teamColor, spriteColor, NewPieceManager);
         val = 10;
+        GetComponent<Image>().sprite = Resources.Load<Sprite>("Cursed");
     }
 
     private void CreatePath(int flip)
@@ -49,12 +51,5 @@ public class Cursed : Base
     {
         base.Kill();
         GameManager.Score(val);
-    }
-
-    public override void Move()
-    {
-        currentCell = targetCell;
-        base.Move();
-        
     }
 }

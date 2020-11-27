@@ -10,6 +10,7 @@ public class Base : EventTrigger {
 	protected RectTransform rectTransform = null;
 	protected PieceManager pieceManager;
 	public Color color = Color.clear;
+	protected Sprite sprite = null;
 
 	protected Vector3Int movement = Vector3Int.one;
 	protected List<Cell> cells = new List<Cell>();
@@ -146,7 +147,7 @@ public class Base : EventTrigger {
     {
 		targetCell.Remove();
 		currentCell.currentPiece = null;
-		//currentCell = targetCell;
+		currentCell = targetCell;
 		currentCell.currentPiece = this;
 		transform.position = currentCell.transform.position;
 		targetCell = null;

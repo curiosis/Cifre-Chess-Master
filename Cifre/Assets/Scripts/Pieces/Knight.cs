@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Knight : Base
 {
@@ -8,6 +9,7 @@ public class Knight : Base
     {
         base.Setup(teamColor, spriteColor, NewPieceManager);
         val = 3;
+        GetComponent<Image>().sprite = Resources.Load<Sprite>("Knight");
     }
 
     private void CreatePath(int flip)
