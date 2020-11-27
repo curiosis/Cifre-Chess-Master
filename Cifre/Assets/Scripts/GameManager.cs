@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour {
     private static int whiteScore = 0, blackScore = 0, turnValue = 0;
     public static bool whiteTurn = true;
     public int maxRuchy;
-    public Text liczbaTur, player1, player2;
+    public Text liczbaTur, player1, player2, winner;
+    public GameObject canvas1, canvas2, pieceMagangerGO;
 
 	void Start()
     {
@@ -39,13 +40,22 @@ public class GameManager : MonoBehaviour {
 
         if(turnValue >= maxRuchy)
         {
-            Debug.Log("Koniec, wygrywa: ");
             if (whiteScore > blackScore)
-                Debug.Log("Białe");
+            {
+                winner.text = "Białe!";
+                canvas1.SetActive(true);
+            }
             else if (whiteScore < blackScore)
-                Debug.Log("Czarne");
+            {
+                winner.text = "Czarne!";
+                canvas1.SetActive(true);
+            }
             else
-                Debug.Log("Remis");
+            {
+                canvas2.SetActive(true);
+            }
+            pieceMagangerGO.SetActive(false);
+        
         }
     }
 }
