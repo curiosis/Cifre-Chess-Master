@@ -128,6 +128,7 @@ public class Base : EventTrigger {
 			return;
         }
 		Move();
+		SoundManager.PlaySound("down");
 		pieceManager.SwitchSide(color);
     }
 
@@ -140,6 +141,7 @@ public class Base : EventTrigger {
 	public virtual void Kill()
     {
 		currentCell.currentPiece = null;
+		SoundManager.PlaySound("kill");
 		gameObject.SetActive(false);
     }
 
