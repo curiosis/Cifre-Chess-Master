@@ -31,6 +31,12 @@ public class UIManager : MonoBehaviour
 
     public void ReloadLevel()
     {
+        GameManager.turnValue = 0;
         SceneManager.LoadScene("Game");
+    }
+
+    public void Home()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 }

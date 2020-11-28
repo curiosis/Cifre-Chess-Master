@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	public Board board;
     public PieceManager pieceManager;
-    private static int whiteScore = 0, blackScore = 0, turnValue = 0;
+    public static int whiteScore = 0, blackScore = 0, turnValue = 0;
     public static bool whiteTurn = true;
     public int maxRuchy;
     public Text liczbaTur, player1, player2, winner;
