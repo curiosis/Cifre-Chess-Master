@@ -78,7 +78,7 @@ public class PieceManager : MonoBehaviour {
     {
 		List<Base> newPieces = new List<Base>();
 
-		for(int i=0; i<pieceOrder.Length; i++)
+		for(int i = 0; i < pieceOrder.Length; i++)
         {
 			GameObject gameObjectPiece = Instantiate(piecePrefab);
 			gameObjectPiece.transform.SetParent(transform);
@@ -95,7 +95,7 @@ public class PieceManager : MonoBehaviour {
 
 	private void Place(int pawnRow, int royaltyRow, List<Base> pieces, Board board)
     {
-		for(int i=0; i<8; i++)
+		for(int i = 0; i < 8; i++)
         {
 			pieces[i].Place(board.allCells[i, pawnRow]);
 			pieces[i + 8].Place(board.allCells[i, royaltyRow]);
