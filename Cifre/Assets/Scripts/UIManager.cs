@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject canvasSett, melodyGO, melodyButtFake;
+    public GameObject canvasSett, melodyGO, melodyButtFake, canvasDictView;
     public Sprite on, off;
 
     public void OffCanvasSett()
@@ -38,5 +38,10 @@ public class UIManager : MonoBehaviour
     public void Home()
     {
         SceneManager.LoadScene("TitleScreen");
+    }
+
+    public void CanvasDictViewOn()
+    {
+        canvasDictView.SetActive(true);
     }
 }
