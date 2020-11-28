@@ -29,8 +29,8 @@ public class PieceManager : MonoBehaviour {
 
 	public void Setup(Board board)
     {
-		whitePieces = CreatePieces(Color.white, new Color32(80, 124, 159, 255), board);
-		blackPieces = CreatePieces(Color.black, new Color32(218, 95, 64, 255), board);
+		whitePieces = CreatePieces(Color.white, new Color32(237, 231, 227, 255), board);
+		blackPieces = CreatePieces(Color.black, new Color32(11, 19, 43, 255), board);
 
 		Place(1, 0, whitePieces, board);
 		Place(6, 7, blackPieces, board);
