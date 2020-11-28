@@ -18,5 +18,4 @@ public class Pawn : Base
         base.Kill();
         GameManager.Score(val);
     }
-
 }

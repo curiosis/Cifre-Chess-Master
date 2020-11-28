@@ -13,21 +13,21 @@ public class Archer : Base {
 
     }
 
-    private void CreatePath()
+    private void CreatePath(int flip)
     {
         int x = currentCell.boardPosition.x;
         int y = currentCell.boardPosition.y;
 
-        Matching(x - 2, y);
-        Matching(x + 2, y);
-
-        Matching(x, y + 2);
-        Matching(x, y - 2);
+        Matching(x, y + (2 * flip));
+        Matching(x, y + (1 * flip));
+        Matching(x + (2 * flip), y);
+        Matching(x + (1 * flip), y);
     }
 
     protected override void CheckingPath()
     {
-        CreatePath();
+        CreatePath(1);
+        CreatePath(-1);
     }
 
     private void Matching(int x, int y)

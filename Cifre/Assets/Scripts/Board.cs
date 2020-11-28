@@ -19,9 +19,9 @@ public class Board : MonoBehaviour {
 
 	public void Create()
     {
-		for(int y=0; y<8; y++)
+		for(int y = 0; y < 8; y++)
         {
-			for(int x=0; x<8; x++)
+			for(int x = 0; x < 8; x++)
             {
                 GameObject newCell = Instantiate(cellPrefab, transform);
                 RectTransform rectTransform = newCell.GetComponent<RectTransform>();
@@ -32,9 +32,9 @@ public class Board : MonoBehaviour {
             }
         }
 
-        for(int x=0; x<8; x += 2)
+        for(int x  =0; x  <8; x += 2)
         {
-            for(int y=0; y<8; y++)
+            for(int y = 0; y < 8; y++)
             {
                 int offset = (y % 2 != 0) ? 0 : 1;
                 int final = x + offset;
@@ -61,5 +61,4 @@ public class Board : MonoBehaviour {
 
         return CellState.Free;
     }
-
 }
