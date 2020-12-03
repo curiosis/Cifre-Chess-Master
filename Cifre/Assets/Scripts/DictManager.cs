@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class DictManager : MonoBehaviour
 {
     public Text textDescription, mainTitle, EnTitle;
+    public Image movement;
     string[] descs = new string[8];
     string[] title1 = new string[8];
     string[] title2 = new string[8];
+    Sprite[] images = new Sprite[8];
     public GameObject canvasView;
 
     private void Start()
@@ -39,6 +41,15 @@ public class DictManager : MonoBehaviour
         title2[5] = "Knight";
         title2[6] = "Queen";
         title2[7] = "Cursed";
+
+        images[0] = Resources.Load<Sprite>("PawnMv");
+        images[1] = Resources.Load<Sprite>("ScoutMv");
+        images[2] = Resources.Load<Sprite>("ArcherMv");
+        images[3] = Resources.Load<Sprite>("RookMv");
+        images[4] = Resources.Load<Sprite>("BishopMv");
+        images[5] = Resources.Load<Sprite>("KnightMv");
+        images[6] = Resources.Load<Sprite>("QueenMv");
+        images[7] = Resources.Load<Sprite>("CursedMv");
     }
 
     public void Pawn()
@@ -46,6 +57,7 @@ public class DictManager : MonoBehaviour
         textDescription.text = descs[0];
         mainTitle.text = title1[0];
         EnTitle.text = title2[0];
+        movement.sprite = images[0];
     }
 
     public void Scout()
@@ -53,6 +65,7 @@ public class DictManager : MonoBehaviour
         textDescription.text = descs[1];
         mainTitle.text = title1[1];
         EnTitle.text = title2[1];
+        movement.sprite = images[1];
     }
 
     public void Archer()
@@ -60,6 +73,7 @@ public class DictManager : MonoBehaviour
         textDescription.text = descs[2];
         mainTitle.text = title1[2];
         EnTitle.text = title2[2];
+        movement.sprite = images[2];
     }
 
     public void Rook()
@@ -67,6 +81,7 @@ public class DictManager : MonoBehaviour
         textDescription.text = descs[3];
         mainTitle.text = title1[3];
         EnTitle.text = title2[3];
+        movement.sprite = images[3];
     }
 
     public void Bishop()
@@ -74,6 +89,7 @@ public class DictManager : MonoBehaviour
         textDescription.text = descs[4];
         mainTitle.text = title1[4];
         EnTitle.text = title2[4];
+        movement.sprite = images[4];
     }
 
     public void Knight()
@@ -81,6 +97,7 @@ public class DictManager : MonoBehaviour
         textDescription.text = descs[5];
         mainTitle.text = title1[5];
         EnTitle.text = title2[5];
+        movement.sprite = images[5];
     }
 
     public void Queen()
@@ -88,6 +105,7 @@ public class DictManager : MonoBehaviour
         textDescription.text = descs[6];
         mainTitle.text = title1[6];
         EnTitle.text = title2[6];
+        movement.sprite = images[6];
     }
 
     public void Cursed()
@@ -95,6 +113,7 @@ public class DictManager : MonoBehaviour
         textDescription.text = descs[7];
         mainTitle.text = title1[7];
         EnTitle.text = title2[7];
+        movement.sprite = images[7];
     }
 
     public void CanvasView()
