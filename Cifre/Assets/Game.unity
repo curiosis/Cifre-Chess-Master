@@ -864,7 +864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 1623965941}
   pieceManager: {fileID: 1532164746}
-  maxRuchy: 21
+  maxRuchy: 70
   liczbaTur: {fileID: 322132586}
   player1: {fileID: 661012846}
   player2: {fileID: 1842277393}

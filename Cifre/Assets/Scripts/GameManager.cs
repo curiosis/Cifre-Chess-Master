@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	public Board board;
     public PieceManager pieceManager;
-    public static int whiteScore = 0, blackScore = 0, turnValue = 0;
+    public static int whiteScore = 0, blackScore = 0, turnValue = 0, whiteWinByPieces=0;
     public static bool whiteTurn = true;
     public int maxRuchy;
     public Text liczbaTur, player1, player2, winner;
@@ -58,7 +58,17 @@ public class GameManager : MonoBehaviour {
                 canvas3.SetActive(true);
             }
             pieceMagangerGO.SetActive(false);
-        
         }
+        else if (whiteWinByPieces == 1)
+        {
+            winner.text = "Białe!";
+            canvas2.SetActive(true);
+        }
+        else if (whiteWinByPieces == -1)
+        {
+            winner.text = "Czarne!";
+            canvas2.SetActive(true);
+        }
+
     }
 }

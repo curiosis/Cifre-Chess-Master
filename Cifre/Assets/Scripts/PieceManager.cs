@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class PieceManager : MonoBehaviour {
 
-	public GameObject piecePrefab;
+	public static int whitePieceVal = 16, blackPieceVal = 16;
 
+	public GameObject piecePrefab;
+	public bool activated = true;
 	private List<Base> whitePieces = null;
 	private List<Base> blackPieces = null;
 	private readonly string[] pieceOrder = new string[16]
@@ -36,11 +38,16 @@ public class PieceManager : MonoBehaviour {
 		Place(6, 7, blackPieces, board);
 
 		SwitchSide(Color.black);
+
     }
 
 	public void SwitchSide(Color color)
     {
 		GameManager.TurnVal();
+		if (blackPieceVal == 0)
+			GameManager.whiteWinByPieces = 1;
+		else if (whitePieceVal == 0)
+			GameManager.whiteWinByPieces = -1;
 		bool blackTurn = color == Color.white;
 		if (blackTurn)
             GameManager.whiteTurn = false;
@@ -50,7 +57,7 @@ public class PieceManager : MonoBehaviour {
 		}
         Interactive(whitePieces, !blackTurn);
 		Interactive(blackPieces, blackTurn);
-    }
+	}
 
 	private void Interactive(List<Base> allPieces, bool value)
     {

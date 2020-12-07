@@ -140,7 +140,12 @@ public class Base : EventTrigger {
     {
 		currentCell.currentPiece = null;
 		SoundManager.PlaySound("kill");
+		if (color == Color.black)
+			PieceManager.blackPieceVal--;
+		else if (color == Color.white)
+			PieceManager.whitePieceVal--;
 		gameObject.SetActive(false);
+
     }
 
 	public virtual void Move()
