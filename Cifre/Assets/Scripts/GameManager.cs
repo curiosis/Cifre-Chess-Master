@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
     public Text liczbaTur, player1, player2, winner;
     public GameObject canvas2, canvas3, canvas4, pieceMagangerGO, whiteTurnGO, blackTurnGO;
 
+    public Color color;
+
 	void Start()
     {
         board.Create();
@@ -38,11 +40,15 @@ public class GameManager : MonoBehaviour {
         {
             whiteTurnGO.SetActive(true);
             blackTurnGO.SetActive(false);
+            player1.color = color;
+            player2.color = Color.white;
         }
         else
         {
             whiteTurnGO.SetActive(false);
             blackTurnGO.SetActive(true);
+            player2.color = color;
+            player1.color = Color.white;
         }
 
         liczbaTur.text = "Tura: " + (turnValue / 2).ToString();
