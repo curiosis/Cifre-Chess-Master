@@ -7,10 +7,10 @@ public class DictManager : MonoBehaviour
 {
     public Text textDescription, mainTitle, EnTitle;
     public Image movement;
-    string[] descs = new string[8];
-    string[] title1 = new string[8];
-    string[] title2 = new string[8];
-    Sprite[] images = new Sprite[8];
+    readonly string[] descs = new string[8];
+    readonly string[] title1 = new string[8];
+    readonly string[] title2 = new string[8];
+    readonly Sprite[] images = new Sprite[8];
     public GameObject canvasView;
 
     private void Start()

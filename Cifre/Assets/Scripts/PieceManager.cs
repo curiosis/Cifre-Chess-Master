@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PieceManager : MonoBehaviour {
 
 	public GameObject piecePrefab;
-	public bool kingAlive = true;
 
 	private List<Base> whitePieces = null;
 	private List<Base> blackPieces = null;
-	private string[] pieceOrder = new string[16]
+	private readonly string[] pieceOrder = new string[16]
 	{
 		"S", "P", "A", "P", "P", "A", "P", "S",
 		"R", "N", "B", "C", "Q", "B", "N", "R"
 	};
 
-	private Dictionary<string, Type> pieceLibrary = new Dictionary<string, Type>()
+	private readonly Dictionary<string, Type> pieceLibrary = new Dictionary<string, Type>()
 	{
 		{"P", typeof(Pawn)},
 		{"R", typeof(Rook)},
@@ -41,14 +41,7 @@ public class PieceManager : MonoBehaviour {
 	public void SwitchSide(Color color)
     {
 		GameManager.TurnVal();
-        if (!kingAlive)
-        {
-			Reset();
-			kingAlive = true;
-			color = Color.black;
-        }
-
-		bool blackTurn = color == Color.white ? true : false;
+		bool blackTurn = color == Color.white;
 		if (blackTurn)
             GameManager.whiteTurn = false;
         else
@@ -57,15 +50,6 @@ public class PieceManager : MonoBehaviour {
 		}
         Interactive(whitePieces, !blackTurn);
 		Interactive(blackPieces, blackTurn);
-    }
-
-	public void Reset()
-    {
-		foreach (Base piece in whitePieces)
-			piece.Reset();
-
-		foreach (Base piece in blackPieces)
-			piece.Reset();
     }
 
 	private void Interactive(List<Base> allPieces, bool value)

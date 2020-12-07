@@ -45,11 +45,9 @@ public class Base : EventTrigger {
         {
 			x += xD;
 			y += yD;
+            CellState cellState = currentCell.board.Validation(x, y, this);
 
-			CellState cellState = CellState.None;
-			cellState = currentCell.board.Validation(x, y, this);
-
-			if(cellState == CellState.Enemy)
+            if (cellState == CellState.Enemy)
             {
 				cells.Add(currentCell.board.allCells[x, y]);
 				break;

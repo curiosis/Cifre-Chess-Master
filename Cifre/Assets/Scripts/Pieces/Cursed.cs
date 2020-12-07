@@ -41,8 +41,7 @@ public class Cursed : Base
 
     private void Matching(int x, int y)
     {
-        CellState cellState = CellState.None;
-        cellState = currentCell.board.Validation(x, y, this);
+        CellState cellState = currentCell.board.Validation(x, y, this);
         if (cellState != CellState.Friendly && cellState != CellState.OutOfBounds)
             cells.Add(currentCell.board.allCells[x, y]);
     }
