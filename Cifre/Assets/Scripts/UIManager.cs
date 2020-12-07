@@ -44,4 +44,9 @@ public class UIManager : MonoBehaviour
     {
         canvasDictView.SetActive(true);
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
