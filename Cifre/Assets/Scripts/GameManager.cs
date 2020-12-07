@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     public static bool whiteTurn = true;
     public int maxRuchy;
     public Text liczbaTur, player1, player2, winner;
-    public GameObject canvas2, canvas3, canvas4, pieceMagangerGO;
+    public GameObject canvas2, canvas3, canvas4, pieceMagangerGO, whiteTurnGO, blackTurnGO;
 
 	void Start()
     {
@@ -34,6 +34,17 @@ public class GameManager : MonoBehaviour {
 
     void Update()
     {
+        if (whiteTurn)
+        {
+            whiteTurnGO.SetActive(true);
+            blackTurnGO.SetActive(false);
+        }
+        else
+        {
+            whiteTurnGO.SetActive(false);
+            blackTurnGO.SetActive(true);
+        }
+
         liczbaTur.text = "Tura: " + (turnValue / 2).ToString();
         player1.text = "Gracz 1\n " + whiteScore.ToString();
         player2.text = "Gracz 2\n " + blackScore.ToString();
