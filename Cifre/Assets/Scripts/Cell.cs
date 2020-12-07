@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class Cell : MonoBehaviour {
 
 	public Image outline;
-
-	[HideInInspector]
 	public RectTransform rectTransform = null;
 	public Board board = null;
 	public Vector2Int boardPosition = Vector2Int.zero;

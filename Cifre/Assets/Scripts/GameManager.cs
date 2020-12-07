@@ -71,9 +71,8 @@ public class GameManager : MonoBehaviour {
                 canvas2.SetActive(true);
             }
             else
-            {
                 canvas3.SetActive(true);
-            }
+
             pieceMagangerGO.SetActive(false);
         }
         else if (whiteWinByPieces == 1)
