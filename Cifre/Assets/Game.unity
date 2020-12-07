@@ -875,6 +875,7 @@ MonoBehaviour:
   pieceMagangerGO: {fileID: 1532164745}
   whiteTurnGO: {fileID: 870586158}
   blackTurnGO: {fileID: 704992467}
+  color: {r: 0.20784314, g: 0.1254902, b: 0.09019608, a: 1}
 --- !u!4 &206832508
 Transform:
   m_ObjectHideFlags: 0
