@@ -130,12 +130,6 @@ public class Base : EventTrigger {
 		pieceManager.SwitchSide(color);
     }
 
-	public void Reset()
-    {
-		Kill();
-		Place(originalCell);
-    }
-
 	public virtual void Kill()
     {
 		currentCell.currentPiece = null;

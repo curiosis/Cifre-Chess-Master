@@ -32,6 +32,9 @@ public class UIManager : MonoBehaviour
     public void ReloadLevel()
     {
         GameManager.turnValue = 0;
+        GameManager.whiteScore = 0;
+        GameManager.blackScore = 0;
+        GameManager.whiteWinByPieces = 0;
         SceneManager.LoadScene("Game");
     }
 

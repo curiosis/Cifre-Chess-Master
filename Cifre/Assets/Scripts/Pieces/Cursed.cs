@@ -22,15 +22,10 @@ public class Cursed : Base
         Matching(x + 1, y + (2 * flip));
         Matching(x + 2, y + (1 * flip));
 
-        Matching(x, y + 2);
-        Matching(x, y + 1);
-        Matching(x, y - 1);
-        Matching(x, y - 2);
-
-        Matching(x + 1, y);
-        Matching(x + 2, y);
-        Matching(x - 1, y);
-        Matching(x - 2, y);
+        Matching(x, y + (2 * flip));
+        Matching(x, y + (1 * flip));
+        Matching(x + (1 * flip), y);
+        Matching(x + (2 * flip), y);
     }
 
     protected override void CheckingPath()
